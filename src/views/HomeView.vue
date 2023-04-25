@@ -4,8 +4,34 @@
       <v-spacer></v-spacer>
       <v-toolbar-title>最新上传</v-toolbar-title>
       <v-spacer></v-spacer>
+      
     </v-toolbar>
+    
     <v-container>
+      <v-row
+        align="center"
+        justify="center"
+      >
+        <v-col
+          align-self="center"
+          cols="12"
+          md="6"
+          lg="3"
+        >
+          <v-text-field 
+            v-model="searchTerm" 
+            label="输入你想查找的BIM项目"
+            @keyup.enter.native="toSearch"
+          >
+            <v-icon
+              @click="toSearch"
+              slot="append"
+            >
+              mdi-magnify
+            </v-icon>
+          </v-text-field>
+        </v-col>
+      </v-row>
       <v-row
         align="center"
         justify="center"
@@ -71,6 +97,7 @@ export default {
       page: 1,
       total: 0,
       curPage: [],
+      searchTerm: "",
     }),
     methods: {
       view(index) {
@@ -115,6 +142,11 @@ export default {
           this.$set(this.$store.state.favorites_ids, this.curPage[index]._id, false);
         } catch (err) {
             console.error(err)
+        }
+      },
+      toSearch() {
+        if (this.searchTerm !== "") {
+          this.$router.push(`/search/${this.searchTerm}`);
         }
       }
     },
