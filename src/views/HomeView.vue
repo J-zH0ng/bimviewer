@@ -4,19 +4,11 @@
       <v-spacer></v-spacer>
       <v-toolbar-title>最新上传</v-toolbar-title>
       <v-spacer></v-spacer>
-<<<<<<< HEAD
     </v-toolbar>
-=======
-      
-    </v-toolbar>
-    
->>>>>>> branch-search
     <v-container>
       <v-row
         align="center"
         justify="center"
-<<<<<<< HEAD
-=======
       >
         <v-col
           align-self="center"
@@ -41,7 +33,6 @@
       <v-row
         align="center"
         justify="center"
->>>>>>> branch-search
         v-for="m in 4"
         :key="m"
       >
@@ -104,10 +95,7 @@ export default {
       page: 1,
       total: 0,
       curPage: [],
-<<<<<<< HEAD
-=======
       searchTerm: "",
->>>>>>> branch-search
     }),
     methods: {
       view(index) {
@@ -153,14 +141,11 @@ export default {
         } catch (err) {
             console.error(err)
         }
-<<<<<<< HEAD
-=======
       },
       toSearch() {
         if (this.searchTerm !== "") {
           this.$router.push(`/search/${this.searchTerm}`);
         }
->>>>>>> branch-search
       }
     },
     async mounted() {

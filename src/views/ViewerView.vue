@@ -1,7 +1,5 @@
 <template>
     <div>
-<<<<<<< HEAD
-=======
         <v-alert
             :value="alert"
             type="error"
@@ -10,7 +8,6 @@
         >
             项目可能已经被作者删除，如有需要请联系作者
         </v-alert>
->>>>>>> branch-search
         <v-toolbar flat>
             <v-toolbar-title>{{projectName}}</v-toolbar-title>
             <v-spacer></v-spacer>
@@ -61,27 +58,6 @@
         data: () => ({
             projectName: "",
             projectFile: "",
-<<<<<<< HEAD
-            projectGltf: ""
-        }),
-        async mounted() {
-            const response = await axios.get(`${process.env.VUE_APP_BASE_API}/project`, {
-                params: {
-                    id: this.$route.params.id
-                }
-            });
-            this.projectFile = response.data.file;
-            this.projectGltf = response.data.gltf;
-            this.projectName = response.data.name;
-
-            const path =  `http://47.94.44.160:3000/static/gltfFiles/${this.projectGltf}`;
-
-            console.log(path);
-
-            main(path).catch((err) => {
-                console.error(err);
-            });
-=======
             projectGltf: "",
             alert: false
         }),
@@ -106,7 +82,6 @@
                 this.alert = true;
             }
             
->>>>>>> branch-search
         },
         methods: {
             downloadProject() {
