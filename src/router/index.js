@@ -7,6 +7,10 @@ import UploadedView from '../views/UploadedView.vue'
 import ViewerView from '../views/ViewerView.vue'
 import UploadView from '../views/UploadView.vue'
 import FavoritesView from '../views/FavoritesView.vue'
+<<<<<<< HEAD
+=======
+import SearchView from '../views/SearchView.vue'
+>>>>>>> branch-search
 
 Vue.use(VueRouter)
 
@@ -45,6 +49,14 @@ const routes = [
     path: '/favorites',
     name: 'favorites',
     component: FavoritesView
+<<<<<<< HEAD
+=======
+  },
+  {
+    path: '/search/:searchTerm',
+    name: 'search',
+    component: SearchView
+>>>>>>> branch-search
   }
 ]
 
